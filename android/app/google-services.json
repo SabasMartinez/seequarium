@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "624646487323",
+    "project_id": "seequarium",
+    "storage_bucket": "seequarium.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624646487323:android:a2e146715f3d36626aa7be",
+        "android_client_info": {
+          "package_name": "com.example.seequarium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624646487323-snslq1d6236asv4iibcs37j2ttvcnqav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.seequarium",
+            "certificate_hash": "47a96103314f42a18ee8bfb36b6393d94c51b8c3"
+          }
+        },
+        {
+          "client_id": "624646487323-36l1eoflsrjoi2qd1t8o9l6qn6u5v1oc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF78jnlvxo3-Fea6oufI-LWHEFT82a-fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624646487323-36l1eoflsrjoi2qd1t8o9l6qn6u5v1oc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "624646487323-j5t4a10km16t8fui1dbbfhg5pa3hsdaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seequarium"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
