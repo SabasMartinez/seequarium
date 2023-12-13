@@ -13,7 +13,7 @@ Use seequarium to find local stores that sell aquatic life and supplies.
 
 ## Installation
 For now, seequarium is only available on Android. You can download the APK from the releases page.
-Alternatively, build from source by cloning the repository and running `flutter build apk` in the root directory. The APK will be located in `build/app/outputs/flutter-apk/app-release.apk`. 
+Alternatively, build from source by cloning the repository and running `flutter build apk` in the root directory. The APK will be located in the root directory of the project. 
 
 APK can be installed by moving to your android device and allowing installation from unknown sources, then opening the APK file.
 
