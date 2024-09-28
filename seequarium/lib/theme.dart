@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final ThemeData appThemeData = ThemeData(
+final ThemeData darkMode = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
     seedColor: const Color.fromARGB(255, 7, 65, 131),
@@ -8,4 +8,14 @@ final ThemeData appThemeData = ThemeData(
   ),
 );
 
-ThemeData get appTheme => appThemeData;
+final ThemeData lightMode = ThemeData(
+  useMaterial3: true,
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: const Color.fromARGB(255, 7, 65, 131),
+    brightness: Brightness.light,
+  ),
+);
+
+ThemeData get darkTheme => lightMode;
+
+ThemeData get lightTheme => lightMode;

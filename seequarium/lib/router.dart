@@ -6,7 +6,7 @@ import 'screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/settings_screen.dart';
-import 'screens/maintainance_screen.dart';
+import 'screens/maintenance_screen.dart';
 
 //global key to show child routes.
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -29,84 +29,86 @@ final GoRouter router = GoRouter(
                   ),
                 ),
               ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage('assets/images/aquarium1.jpg'),
-                  fit: BoxFit.cover,
-                )),
-                child: Text(
-                  'Seequarium',
-                  style: TextStyle(
-                    shadows: [
-                      Shadow(
-                        blurRadius: 10.0,
-                        color: Colors.black,
-                        offset: Offset(5.0, 5.0),
-                      ),
-                    ],
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+        drawer: SafeArea(
+          child: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                const DrawerHeader(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage('assets/images/aquarium1.jpg'),
+                    fit: BoxFit.cover,
+                  )),
+                  child: Text(
+                    'Seequarium',
+                    style: TextStyle(
+                      shadows: [
+                        Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0),
+                        ),
+                      ],
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-              //welcome is not a tab that is accessible by the user,
-              // this is shown once at first start so it should not be in the drawer
-              // ListTile(
-              //   title: const Text('Welcome'),
-              //   onTap: () {
-              //     context.go('/welcome');
-              //     Navigator.pop(context); // Close the drawer
-              //   },
-              // ),
-              ListTile(
-                title: const Text('Home'),
-                onTap: () {
-                  context.go('/home');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-              ListTile(
-                title: const Text('Profile'),
-                onTap: () {
-                  context.go('/profile');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-              ListTile(
-                title: const Text('Log Maintainance'),
-                onTap: () {
-                  context.go('/maintainance');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-              ListTile(
-                title: const Text('Locate'),
-                onTap: () {
-                  context.go('/locate');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-              ListTile(
-                title: const Text('Identify'),
-                onTap: () {
-                  context.go('/identify');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-              ListTile(
-                title: const Text('Settings'),
-                onTap: () {
-                  context.go('/settings');
-                  Navigator.pop(context); // Close the drawer
-                },
-              ),
-            ],
+                //welcome is not a tab that is accessible by the user,
+                // this is shown once at first start so it should not be in the drawer
+                // ListTile(
+                //   title: const Text('Welcome'),
+                //   onTap: () {
+                //     context.go('/welcome');
+                //     Navigator.pop(context); // Close the drawer
+                //   },
+                // ),
+                ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    context.go('/home');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Profile'),
+                  onTap: () {
+                    context.go('/profile');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Log Maintenance'),
+                  onTap: () {
+                    context.go('/maintenance');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Locate'),
+                  onTap: () {
+                    context.go('/locate');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Identify'),
+                  onTap: () {
+                    context.go('/identify');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Settings'),
+                  onTap: () {
+                    context.go('/settings');
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+              ],
+            ),
           ),
         ),
         body: child,
@@ -139,8 +141,8 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const IdentifyScreen(),
         ),
         GoRoute(
-          path: '/maintainance',
-          builder: (context, state) => const MaintainanceScreen(),
+          path: '/maintenance',
+          builder: (context, state) => const MaintenanceScreen(),
         ),
       ],
     )
@@ -161,8 +163,8 @@ String matchPath(String path) {
       return 'Locate';
     case '/identify':
       return 'Identify';
-    case '/maintainance':
-      return 'Log Maintainance';
+    case '/maintenance':
+      return 'Log Maintenance';
     default:
       return 'Welcome';
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class IdentifyScreen extends StatefulWidget {
-  const IdentifyScreen({Key? key}) : super(key: key);
+  const IdentifyScreen({super.key});
 
   @override
   State<IdentifyScreen> createState() => _IdentifyScreenState();

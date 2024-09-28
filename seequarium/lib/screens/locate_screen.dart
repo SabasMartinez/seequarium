@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class LocateScreen extends StatefulWidget {
-  const LocateScreen({Key? key}) : super(key: key);
+  const LocateScreen({super.key});
 
   @override
   State<LocateScreen> createState() => _LocateScreenState();
@@ -106,7 +106,7 @@ class _LocateScreenState extends State<LocateScreen> {
                   onMapCreated: _onMapCreated,
                   initialCameraPosition: CameraPosition(
                     target: _center,
-                    zoom: 11.0,
+                    zoom: 13.0,
                   ),
                   myLocationButtonEnabled: true,
                   myLocationEnabled: true,

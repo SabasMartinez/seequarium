@@ -17,7 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   //persistent across routes.
-  await SharedPreferencesSingleton.createInstance();
+  await SharedPreferencesSingleton.instance.init();
   runApp(const Seequarium());
   //checks if it is first run, reroutes to home if not
   entrypoint();
@@ -26,21 +26,23 @@ void main() async {
 
 class Seequarium extends StatelessWidget {
   //construct a seequarium object
-  const Seequarium({Key? key}) : super(key: key);
+  const Seequarium({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: appTheme,
+      theme: lightTheme,
       routerConfig: router,
       title: "Seequarium",
     );
   }
 }
 
-void entrypoint() {
-  SharedPreferences preferences = SharedPreferencesSingleton.preferences!;
-  if (isFirstRun(preferences)) {
+void entrypoint() async {
+  SharedPreferencesAsync preferences =
+      SharedPreferencesSingleton.instance.preferences;
+  bool? welcomeDismissed = await preferences.getBool("welcomeDismissed");
+  if (welcomeDismissed == false || welcomeDismissed == null) {
     //if first run, route to welcome screen
     router.go("/welcome");
   } else {
@@ -49,28 +51,16 @@ void entrypoint() {
   }
 }
 
-bool isFirstRun(SharedPreferences? preferences) {
-  if (preferences != null) {
-    if (preferences.getBool("welcomeDismissed") == null ||
-        preferences.getBool("welcomeDismissed") == false) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  throw Exception("SharedPreferences is null");
-}
-
 //create singleton sharedpreferences
 class SharedPreferencesSingleton {
-  static SharedPreferencesSingleton? _instance;
-  static SharedPreferences? _preferences;
+  static final SharedPreferencesSingleton instance =
+      SharedPreferencesSingleton._internal();
+  late final SharedPreferencesAsync preferences;
 
-  static Future<SharedPreferencesSingleton?> createInstance() async {
-    _instance ??= SharedPreferencesSingleton();
-    _preferences ??= await SharedPreferences.getInstance();
-    return _instance;
+//constructor
+  SharedPreferencesSingleton._internal();
+
+  Future<void> init() async {
+    preferences = SharedPreferencesAsync();
   }
-
-  static SharedPreferences? get preferences => _preferences;
 }

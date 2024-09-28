@@ -5,14 +5,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:seequarium/main.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  SharedPreferences preferences = SharedPreferencesSingleton.preferences!;
+  SharedPreferencesAsync preferences =
+      SharedPreferencesSingleton.instance.preferences;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

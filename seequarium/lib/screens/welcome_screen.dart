@@ -5,14 +5,15 @@ import 'package:seequarium/main.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  SharedPreferences preferences = SharedPreferencesSingleton.preferences!;
+  SharedPreferencesAsync preferences =
+      SharedPreferencesSingleton.instance.preferences;
 
   static const welcomeShadow = [
     Shadow(

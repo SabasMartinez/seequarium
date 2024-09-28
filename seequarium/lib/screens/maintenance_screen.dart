@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MaintainanceScreen extends StatefulWidget {
-  const MaintainanceScreen({Key? key}) : super(key: key);
+class MaintenanceScreen extends StatefulWidget {
+  const MaintenanceScreen({super.key});
 
   static const routeName = '/settings';
 
   @override
-  State<MaintainanceScreen> createState() => _MaintainanceScreenState();
+  State<MaintenanceScreen> createState() => _MaintenanceScreenState();
 }
 
-class _MaintainanceScreenState extends State<MaintainanceScreen> {
+class _MaintenanceScreenState extends State<MaintenanceScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -17,7 +17,7 @@ class _MaintainanceScreenState extends State<MaintainanceScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Log your aquarium maintainance here'),
+            Text('Log your aquarium maintenance here'),
           ],
         ),
       ),
