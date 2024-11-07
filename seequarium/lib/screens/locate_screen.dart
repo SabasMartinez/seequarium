@@ -23,6 +23,7 @@ class _LocateScreenState extends State<LocateScreen> {
 
   late LatLng _center;
 
+//look into darkmode map creation.
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
@@ -110,6 +111,7 @@ class _LocateScreenState extends State<LocateScreen> {
                   ),
                   myLocationButtonEnabled: true,
                   myLocationEnabled: true,
+                  // liteModeEnabled: true,
                 );
               } else if (snapshot.hasError) {
                 return Text("Error: ${snapshot.error}");

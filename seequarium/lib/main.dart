@@ -31,7 +31,7 @@ class Seequarium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: lightTheme,
+      theme: darkTheme,
       routerConfig: router,
       title: "Seequarium",
     );

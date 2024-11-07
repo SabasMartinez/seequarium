@@ -16,6 +16,6 @@ final ThemeData lightMode = ThemeData(
   ),
 );
 
-ThemeData get darkTheme => lightMode;
+ThemeData get darkTheme => darkMode;
 
 ThemeData get lightTheme => lightMode;
