@@ -22,3 +22,7 @@ APK can be installed by moving to your android device and allowing installation 
 
 ## Usage
 Like any other app, open it and **use it**.
+
+## Developement Team
+Backend Approuting, Userviews - Sabas\
+App port to React Native - Nissa
