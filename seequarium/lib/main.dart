@@ -11,6 +11,7 @@ import 'router.dart';
 //routes to welcome screen if first run, home screen if not
 // Routes are in router.dart, screens and widgets are in lib/screens
 void main() async {
+  //15: ensures that widgets are binded used in line 15 to show splash until fully loaded
   WidgetsBinding binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
   await Firebase.initializeApp(
